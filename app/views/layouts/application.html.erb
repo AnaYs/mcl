@@ -10,9 +10,20 @@
 </head>
 <body>
 
-<%= yield %>
+  <!-- TEMPORARY STYLING  -->
+  <style>
+    body{
+      padding-top: 50px;
+    }
+  </style>
+
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/notices' %>
+
+  <%= yield %>
 
   <%= javascript_include_tag 'application' %>
+
   <%= yield(:after_js) %>
 
 </body>

@@ -1,0 +1,11 @@
+<h1>All Notes</h1>
+
+<ul id="notes">
+  <% @notes.each do |note| %>
+    <li>
+      <%= link_to note.title, note_path(note) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create a New Note", new_note_path, class: "new_note" %>

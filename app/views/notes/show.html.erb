@@ -1,0 +1,5 @@
+<h1><%= @note.title %></h1>
+<p><%= @note.topic %></p>
+<%= link_to "edit", edit_note_path(@note) %>
+<%= link_to "delete", note_path(@note), method: :delete %>
+<%= link_to "<< Back to Notes List", notes_path %>

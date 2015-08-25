@@ -1,35 +1,47 @@
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
+<nav class="navbar navbar-default no-margin-bottom">
+        <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="#">MyCodingLibrary</a>
+                <button class="navbar-toggle collapsed" data-target=
+                "#bs-example-navbar-collapse-1" data-toggle="collapse" type=
+                "button"><span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span>
+                <span class="icon-bar"></span></button> <a class="navbar-brand"
+                href="#">MCL</a>
             </div>
 
-            <div class="bfh-selectbox bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true">
-</div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                  <% if user_signed_in? %>
-                    <div id="user_nav">
-      Logged in as <strong><%= current_user.email %> </strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> |
-        <%= link_to "Login", new_user_session_path %>
-    <% end %>
-  </div>
-                </ul>
-            </div>
+            <div class="collapse navbar-collapse" id=
+            "bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-right" id="signin" name=
+                "signin">
+                    <div class="input-group">
+                        <span class=
+                        "input-group-addon glyphicon glyphicon-user" style=
+                        "font-style: italic"></span> <input class=
+                        "form-control" id="email" name="email" placeholder=
+                        "Email Address" type="email" value="">
+                    </div>
 
-            <!-- /.navbar-collapse -->
+                    <div class="input-group">
+                        <span class=
+                        "input-group-addon glyphicon glyphicon-lock" style=
+                        "font-style: italic"></span> <input class=
+                        "form-control" id="password" name="password"
+                        placeholder="Password" type="password" value="">
+                    </div><button class="btn btn-primary" type=
+                    "submit">Login</button> <button class="btn btn-danger" type=
+                    "button" data-toggle="modal" data-target="#loginModal">SignUp</button>
+                    <div class="btn-group show-on-hover">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Language <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#"><%= link_to_unless_current "English", locale: "en" %></a></li>
+            <li><a href="#"><%= link_to_unless_current "French", locale: "fr" %></a></li>
+            <li><a href="#">Spanish</a></li>
+          </ul>
         </div>
-        <!-- /.container -->
+                </form>
+            </div>
+        </div>
     </nav>
+

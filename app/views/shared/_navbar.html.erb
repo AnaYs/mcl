@@ -29,9 +29,9 @@
                         placeholder="Password" type="password" value="">
                     </div>
                     <button class="btn btn-default" type=
-                    "submit">Login</button>
+                    "submit"><%= link_to t(".sign_in", default: "Login"), new_user_session_path %></button>
                     <button class="btn btn-default" type=
-                    "button">SignUp</button>
+                    "button"><%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path %></button>
                     <div class="btn-group">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             Language <span class="caret"></span>

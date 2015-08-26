@@ -17,8 +17,8 @@
                         <span class=
                         "input-group-addon glyphicon glyphicon-user" style=
                         "font-style: italic"></span> <input class=
-                        "form-control" id="email" name="email" placeholder=
-                        "Email Address" type="email" value="">
+                        "form-control" id="email" name="username" placeholder=
+                        "Username" type="email" value="">
                     </div>
 
                     <div class="input-group">
@@ -27,10 +27,12 @@
                         "font-style: italic"></span> <input class=
                         "form-control" id="password" name="password"
                         placeholder="Password" type="password" value="">
-                    </div><button class="btn btn-primary" type=
-                    "submit">Login</button> <button class="btn btn-danger" type=
-                    "button" data-toggle="modal" data-target="#loginModal">SignUp</button>
-                    <div class="btn-group show-on-hover">
+                    </div>
+                    <button class="btn btn-default" type=
+                    "submit"><%= link_to t(".sign_in", default: "Login"), new_user_session_path %></button>
+                    <button class="btn btn-default" type=
+                    "button"><%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path %></button>
+                    <div class="btn-group">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             Language <span class="caret"></span>
           </button>
